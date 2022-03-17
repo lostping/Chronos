@@ -1,0 +1,105 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:numeric="http://gu.se/NumericInput"
+             xmlns:local="clr-namespace:Chronos.UserControls"
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls" x:Class="Chronos.UserControls.SettingsControl"
+             xmlns:p="clr-namespace:Chronos.Properties"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Width="800" Height="450" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <TabControl x:Name="settings_tabs" mah:HeaderedControlHelper.HeaderFontSize="12" mah:TabControlHelper.Underlined="SelectedTabItem">
+            <TabItem Header="{x:Static p:Resources.Application}">
+                <Grid Margin="10,10,0,0">
+                    <Label x:Name="lab_DailyWork" Content="{x:Static p:Resources.DailyWorktime}" HorizontalAlignment="Left" Margin="84,0,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="lab_MaxDailyWork" Content="{x:Static p:Resources.MaxDailyWorktime}" HorizontalAlignment="Left" Margin="84,48,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="lab_SaveInterval" Content="{x:Static p:Resources.SaveInterval}" HorizontalAlignment="Left" Margin="84,95,0,0" VerticalAlignment="Top"/>
+                    <numeric:DoubleBox x:Name="DailyWork" Height="26"
+                MaxValue="10"
+                MinValue="1"
+                NumberStyles="AllowDecimalPoint"
+                StringFormat="#,0.0"
+                Culture="de-DE" BorderThickness="0" Background="#FF212121" Foreground="White" HorizontalAlignment="Left" Width="61" VerticalAlignment="Top" mah:ControlsHelper.FocusBorderBrush="#FF666666"
+                    />
+                    <numeric:DoubleBox x:Name="MaxDailyWork" Height="26"
+                MaxValue="10"
+                MinValue="1"
+                NumberStyles="AllowDecimalPoint"
+                StringFormat="#,0.0"
+                Culture="de-DE" Margin="0,48,0,0" BorderThickness="0" Background="#FF212121" Foreground="White" VerticalAlignment="Top" HorizontalAlignment="Left" Width="61"
+                    />
+                    <numeric:DoubleBox x:Name="SaveInterval" Height="26"
+                MaxValue="10"
+                MinValue="1"
+                StringFormat="#,0"
+                Culture="de-DE" Margin="0,95,0,0" BorderThickness="0" Background="#FF212121" Foreground="White" HorizontalAlignment="Left" Width="61" VerticalAlignment="Top"
+                    />
+                    <StackPanel Margin="434,5,30,5">
+                        <mah:ToggleSwitch x:Name="tog_start_with_windows" HorizontalAlignment="Left" VerticalAlignment="Top" OffContent="{x:Static p:Resources.DontStartWithWindows}" OnContent="{x:Static p:Resources.StartWithWindows}" Toggled="Tog_start_with_windows_Toggled" Width="336" Height="60" Header="{x:Static p:Resources.Autostart}"  />
+                        <mah:ToggleSwitch x:Name="tog_start_hidden" HorizontalAlignment="Left" VerticalAlignment="Top" OffContent="{x:Static p:Resources.DontHideWindowOnStart}" OnContent="{x:Static p:Resources.HideWindowOnStart}" Width="335" Height="60" Header="{x:Static p:Resources.WindowBehavior}" />
+                        <mah:ToggleSwitch x:Name="tog_hide_minimize" HorizontalAlignment="Left" VerticalAlignment="Top" OffContent="{x:Static p:Resources.ApplicationQuit}" OnContent="{x:Static p:Resources.ApplicationMinimize}" Width="335" Height="60" />
+                        <mah:ToggleSwitch x:Name="tog_portable" HorizontalAlignment="Left" VerticalAlignment="Top" OffContent="{x:Static p:Resources.PortableModeOff}" OnContent="{x:Static p:Resources.PortableMode}" Width="335" Height="60" Header="{x:Static p:Resources.Portable}" Toggled="Tog_portable_Toggled" />
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="{x:Static p:Resources.NotificationSetting}">
+                <Grid Margin="10,10,0,0">
+                    <StackPanel>
+                        <mah:ToggleSwitch x:Name="tog_gohome" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" OffContent="{x:Static p:Resources.EnableGoHomeReminder}" OnContent="{x:Static p:Resources.DisableGoHomeReminder}" Toggled="Tog_gohome_Toggled" Width="335" Height="60" Header="{x:Static p:Resources.Reminder}" />
+                        <Grid Margin="0,0,449,0">
+                            <Label x:Name="lab_EndWorkReminderInterval" Content="{x:Static p:Resources.ReminderInterval}" HorizontalAlignment="Left" Margin="84,0,0,0" VerticalAlignment="Top"/>
+                            <numeric:DoubleBox x:Name="EndWorkReminderInterval" Height="26"
+                                MaxValue="15"
+                                MinValue="1"
+                                StringFormat="#"
+                                Culture="de-DE" BorderThickness="0" Foreground="White" HorizontalAlignment="Left" Width="61" VerticalAlignment="Top" IsEnabled="False" Background="#FF212121" 
+                        />
+                        </Grid>
+                        <Grid Margin="0,5,449,0">
+                            <Label x:Name="lab_EndWorkReminderThreshold" Content="{x:Static p:Resources.ReminderThreshold}" HorizontalAlignment="Left" Margin="84,0,0,0" VerticalAlignment="Top"/>
+                            <numeric:DoubleBox x:Name="EndWorkReminderThreshold" Height="26"
+                                MaxValue="15"
+                                MinValue="1"
+                                StringFormat="#"
+                                Culture="de-DE" BorderThickness="0" Foreground="White" HorizontalAlignment="Left" Width="61" VerticalAlignment="Top" IsEnabled="False" Background="#FF212121" 
+                        />
+                        </Grid>
+                    </StackPanel>
+                    <mah:ToggleSwitch x:Name="tog_sound" HorizontalAlignment="Left" Margin="340,10,0,0" VerticalAlignment="Top" OffContent="{x:Static p:Resources.SoundEnable}" OnContent="{x:Static p:Resources.SoundDisable}" Width="335" Height="60" Header="{x:Static p:Resources.Sound}" />
+                    <ToggleButton x:Name="toggle_toast" Width="60" Height="60" Margin="10,176,714,175" Click="Toggle_toast_Click">
+                        <iconPacks:PackIconMaterial Width="40"
+                                        Height="40"
+                                        Kind="MessageAlert" />
+                    </ToggleButton>
+                    <ToggleButton x:Name="toggle_sound_warn" Width="60" Height="60" Click="Toggle_sound_warn_Click">
+                        <iconPacks:PackIconMaterial Width="40"
+                            Height="40"
+                            Kind="VolumeHigh"
+                            Foreground="#FFBF7100"
+                            />
+                    </ToggleButton>
+                    <ToggleButton x:Name="toggle_sound_crit" Width="60" Height="60" Click="Toggle_sound_crit_Click" Margin="427,176,297,175">
+                        <iconPacks:PackIconMaterial Width="40"
+                            Height="40"
+                            Kind="VolumeHigh"
+                            Foreground="#FFB20000"
+                            />
+                    </ToggleButton>
+                    <Label x:Name="label_test_toast" Content="{x:Static p:Resources.TestToast}" HorizontalAlignment="Left" Margin="75,176,0,0" VerticalAlignment="Top" Width="143" Height="60" VerticalContentAlignment="Center" FontSize="16"/>
+                    <Label x:Name="label_test_sound" Content="{x:Static p:Resources.TestSound}" HorizontalAlignment="Left" Margin="492,176,0,0" VerticalAlignment="Top" Width="143" Height="60" VerticalContentAlignment="Center" FontSize="16"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="{x:Static p:Resources.ExportSetting}">
+                <Grid Margin="10,10,0,0">
+                    <mah:ToggleSwitch x:Name="tog_exportdefaultpath" HorizontalAlignment="Left" VerticalAlignment="Top" OffContent="{x:Static p:Resources.ExportDefaultPathOn}" OnContent="{x:Static p:Resources.ExportDefaultPathOff}" Toggled="Tog_exportdefaultpath_Toggled" Width="335" Height="60" Header="{x:Static p:Resources.Export}" />
+                    <TextBox x:Name="tb_exportfolder" HorizontalAlignment="Left" Height="23" Margin="0,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="467" mah:TextBoxHelper.Watermark="{x:Static p:Resources.ExportFolderWatermark}" IsEnabled="False"/>
+                    <Button x:Name="bt_exportfolder" Content="{x:Static p:Resources.ExportCustomFolder}" HorizontalAlignment="Left" Margin="472,65,0,0" VerticalAlignment="Top" Width="143" Height="26" IsEnabled="False" Click="Bt_exportfolder_Click"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Button x:Name="Save" Content="{x:Static p:Resources.Save}" Margin="0,0,10,91" Click="Save_Click" HorizontalAlignment="Right" Width="100" Height="35" VerticalAlignment="Bottom"/>
+    </Grid>
+</UserControl>

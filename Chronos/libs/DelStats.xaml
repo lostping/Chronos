@@ -1,0 +1,33 @@
+﻿<simpleChildWindow:ChildWindow
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:p="clr-namespace:Chronos.Properties"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+    xmlns:simpleChildWindow="clr-namespace:MahApps.Metro.SimpleChildWindow;assembly=MahApps.Metro.SimpleChildWindow"
+    xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+    x:Class="Chronos.libs.DelStats"
+    Title="{x:Static p:Resources.WorktimeDel}"
+    d:DesignHeight="360"
+    d:DesignWidth="500"
+    IsModal="False"
+    AllowMove="True"
+    ShowCloseButton="False"
+    mc:Ignorable="d"
+    IsOpen="True"
+    >
+    <!-- Turn IsOpen false before compiling -->
+
+    <StackPanel Width="400" Margin="0,0,0,10">
+        <!-- Content body -->
+        <Label x:Name="error" HorizontalAlignment="Center" Foreground="#FFB40000" FontSize="20" Content="{x:Static p:Resources.SureDelete}"/>
+        <Label x:Name="day" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold"></Label>
+        <Grid VerticalAlignment="Bottom">
+            <StackPanel Orientation="Horizontal" Height="40" HorizontalAlignment="Center">
+                <Button x:Name="SaveDel" Margin="5" Content="{x:Static p:Resources.Delete}" Background="Green" Click="SaveDel_Click"/>
+                <Button x:Name="CancelDel" Margin="5" Content="{x:Static p:Resources.Cancel}" Background="Red" Click="CancelDel_Click" />
+            </StackPanel>
+        </Grid>
+    </StackPanel>
+</simpleChildWindow:ChildWindow>

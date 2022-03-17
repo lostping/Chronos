@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32228.430
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chronos", "Chronos\Chronos.csproj", "{CB297B07-B32C-4D81-937C-7269F56FA840}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EBD3F658-D209-4647-BD8B-7B72C2B7A2B9} = {EBD3F658-D209-4647-BD8B-7B72C2B7A2B9}
+		{6F4736D4-24CF-493C-8315-90FB9401BA45} = {6F4736D4-24CF-493C-8315-90FB9401BA45}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioPlayerLib", "AudioPlayerLib\AudioPlayerLib.csproj", "{6F4736D4-24CF-493C-8315-90FB9401BA45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WaveResources", "WaveResources\WaveResources.csproj", "{EBD3F658-D209-4647-BD8B-7B72C2B7A2B9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CB297B07-B32C-4D81-937C-7269F56FA840}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB297B07-B32C-4D81-937C-7269F56FA840}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB297B07-B32C-4D81-937C-7269F56FA840}.Debug|x64.ActiveCfg = Debug|x64
+		{CB297B07-B32C-4D81-937C-7269F56FA840}.Debug|x64.Build.0 = Debug|x64
+		{CB297B07-B32C-4D81-937C-7269F56FA840}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB297B07-B32C-4D81-937C-7269F56FA840}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB297B07-B32C-4D81-937C-7269F56FA840}.Release|x64.ActiveCfg = Release|x64
+		{CB297B07-B32C-4D81-937C-7269F56FA840}.Release|x64.Build.0 = Release|x64
+		{6F4736D4-24CF-493C-8315-90FB9401BA45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F4736D4-24CF-493C-8315-90FB9401BA45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F4736D4-24CF-493C-8315-90FB9401BA45}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{6F4736D4-24CF-493C-8315-90FB9401BA45}.Debug|x64.Build.0 = Debug|Any CPU
+		{6F4736D4-24CF-493C-8315-90FB9401BA45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F4736D4-24CF-493C-8315-90FB9401BA45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F4736D4-24CF-493C-8315-90FB9401BA45}.Release|x64.ActiveCfg = Release|Any CPU
+		{6F4736D4-24CF-493C-8315-90FB9401BA45}.Release|x64.Build.0 = Release|Any CPU
+		{EBD3F658-D209-4647-BD8B-7B72C2B7A2B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBD3F658-D209-4647-BD8B-7B72C2B7A2B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBD3F658-D209-4647-BD8B-7B72C2B7A2B9}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{EBD3F658-D209-4647-BD8B-7B72C2B7A2B9}.Debug|x64.Build.0 = Debug|Any CPU
+		{EBD3F658-D209-4647-BD8B-7B72C2B7A2B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBD3F658-D209-4647-BD8B-7B72C2B7A2B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBD3F658-D209-4647-BD8B-7B72C2B7A2B9}.Release|x64.ActiveCfg = Release|Any CPU
+		{EBD3F658-D209-4647-BD8B-7B72C2B7A2B9}.Release|x64.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9AC7D217-FFC5-466C-BF23-3BCB922822DB}
+		RESX_NeutralResourcesLanguage = de-DE
+	EndGlobalSection
+EndGlobal

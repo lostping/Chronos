@@ -1,0 +1,50 @@
+﻿<simpleChildWindow:ChildWindow
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:p="clr-namespace:Chronos.Properties"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+    xmlns:simpleChildWindow="clr-namespace:MahApps.Metro.SimpleChildWindow;assembly=MahApps.Metro.SimpleChildWindow"
+    xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+    xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls" x:Name="exportchildwindow"
+    x:Class="Chronos.libs.ExportStats"
+    Title="{x:Static p:Resources.WorktimeExport}"
+    d:DesignHeight="360"
+    d:DesignWidth="500"
+    IsModal="False"
+    AllowMove="True"
+    ShowCloseButton="False"
+    mc:Ignorable="d"
+    IsOpen="True" ClosingFinished="Exportchildwindow_ClosingFinished"
+    >
+    <!-- Turn IsOpen false before compiling -->
+    <simpleChildWindow:ChildWindow.Icon>
+        <iconPacks:PackIconMaterial Width="22"
+                              Height="22"
+                              HorizontalAlignment="Center"
+                              VerticalAlignment="Center"
+                              Kind="Export" />
+    </simpleChildWindow:ChildWindow.Icon>
+    <Grid Width="500" Height="300">
+        <!-- Content body -->
+        <Calendar x:Name="ExportDatePicker" Margin="10,10,307,66" SelectedDatesChanged="ExportDatePicker_SelectedDatesChanged" GotMouseCapture="ExportDatePicker_GotMouseCapture"/>
+        <StackPanel HorizontalAlignment="Left" Height="280" Margin="198,10,0,0" VerticalAlignment="Top" Width="292">
+            <Grid Height="64" Margin="0,0,0,5">
+                <mah:ToggleSwitch x:Name="ExportAll" HorizontalAlignment="Left" VerticalAlignment="Top" Width="292" OffContent="{x:Static p:Resources.ExportTenOn}" OnContent="{x:Static p:Resources.ExportTenOff}" Header="{x:Static p:Resources.ExportRelevance}" Height="61" Margin="0,0,0,-29"/>
+            </Grid>
+            <Grid Height="64" Margin="0,0,0,5">
+                <TextBox x:Name="ExportWeekT" HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" Width="292" mah:TextBoxHelper.Watermark="{x:Static p:Resources.SelectDate}" IsReadOnly="True"/>
+                <Button x:Name="ExportWeek" Content="{x:Static p:Resources.ExportWeek}" HorizontalAlignment="Left" Margin="0,32,0,0" VerticalAlignment="Top" Width="292" Click="ExportWeek_Click" IsEnabled="False"/>
+            </Grid>
+            <Grid Height="64" Margin="0,0,0,5">
+                <TextBox x:Name="ExportMonthT" HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" Width="292" mah:TextBoxHelper.Watermark="{x:Static p:Resources.SelectDate}" IsReadOnly="True"/>
+                <Button x:Name="ExportMonth" Content="{x:Static p:Resources.ExportMonth}" HorizontalAlignment="Left" Margin="0,32,0,0" VerticalAlignment="Top" Width="292" Click="ExportMonth_Click" IsEnabled="False"/>
+            </Grid>
+            <Grid Height="64" Margin="0,0,0,5">
+                <TextBox x:Name="ExportYearT" HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" Width="292" mah:TextBoxHelper.Watermark="{x:Static p:Resources.SelectDate}" IsReadOnly="True"/>
+                <Button x:Name="ExportYear" Content="{x:Static p:Resources.ExportYear}" HorizontalAlignment="Left" Margin="0,32,0,0" VerticalAlignment="Top" Width="292" Click="ExportYear_Click" IsEnabled="False"/>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</simpleChildWindow:ChildWindow>

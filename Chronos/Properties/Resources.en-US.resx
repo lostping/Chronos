@@ -1,0 +1,540 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Application" xml:space="preserve">
+    <value>Application</value>
+  </data>
+  <data name="NotificationSetting" xml:space="preserve">
+    <value>Notifications</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>About / Help</value>
+  </data>
+  <data name="Statistics" xml:space="preserve">
+    <value>Statistics</value>
+  </data>
+  <data name="Holidays" xml:space="preserve">
+    <value>Holidays</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="Holiday" xml:space="preserve">
+    <value>Holiday</value>
+  </data>
+  <data name="Level" xml:space="preserve">
+    <value>Level</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="DailyWorktime" xml:space="preserve">
+    <value>Daily work time (hours)</value>
+  </data>
+  <data name="MaxDailyWorktime" xml:space="preserve">
+    <value>Maximal daily work time (hours)</value>
+  </data>
+  <data name="SaveInterval" xml:space="preserve">
+    <value>Save interval (minutes)</value>
+  </data>
+  <data name="StartWithWindows" xml:space="preserve">
+    <value>Start with Windows</value>
+  </data>
+  <data name="DontStartWithWindows" xml:space="preserve">
+    <value>Don't start with Windows</value>
+  </data>
+  <data name="EnableGoHomeReminder" xml:space="preserve">
+    <value>Enable go home reminder</value>
+  </data>
+  <data name="DisableGoHomeReminder" xml:space="preserve">
+    <value>Disable go home reminder</value>
+  </data>
+  <data name="ReminderInterval" xml:space="preserve">
+    <value>End work reminder interval (minutes)</value>
+  </data>
+  <data name="WindowBehavior" xml:space="preserve">
+    <value>Window behaviour</value>
+  </data>
+  <data name="Reminder" xml:space="preserve">
+    <value>Reminder</value>
+  </data>
+  <data name="HideWindowOnStart" xml:space="preserve">
+    <value>Hide window on start</value>
+  </data>
+  <data name="DontHideWindowOnStart" xml:space="preserve">
+    <value>Don't hide window on start</value>
+  </data>
+  <data name="Autostart" xml:space="preserve">
+    <value>Autostart</value>
+  </data>
+  <data name="Sound" xml:space="preserve">
+    <value>Sound</value>
+  </data>
+  <data name="SoundEnable" xml:space="preserve">
+    <value>Enable Sound</value>
+  </data>
+  <data name="SoundDisable" xml:space="preserve">
+    <value>Disable Sound</value>
+  </data>
+  <data name="TestToast" xml:space="preserve">
+    <value>Test Toast</value>
+  </data>
+  <data name="TestSound" xml:space="preserve">
+    <value>Test notification sound</value>
+  </data>
+  <data name="Export" xml:space="preserve">
+    <value>Export work time</value>
+  </data>
+  <data name="Chronos" xml:space="preserve">
+    <value>Chronos</value>
+  </data>
+  <data name="Log" xml:space="preserve">
+    <value>Log</value>
+  </data>
+  <data name="Table" xml:space="preserve">
+    <value>Table</value>
+  </data>
+  <data name="Chart" xml:space="preserve">
+    <value>Chart</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Target" xml:space="preserve">
+    <value>Target</value>
+  </data>
+  <data name="Net" xml:space="preserve">
+    <value>Net</value>
+  </data>
+  <data name="WorkDays" xml:space="preserve">
+    <value>Workdays</value>
+  </data>
+  <data name="StartTime" xml:space="preserve">
+    <value>Work start time</value>
+  </data>
+  <data name="EndTime" xml:space="preserve">
+    <value>Work end time</value>
+  </data>
+  <data name="WorktimeAdd" xml:space="preserve">
+    <value>Add work time:</value>
+  </data>
+  <data name="WorktimeEdit" xml:space="preserve">
+    <value>Edit work time:</value>
+  </data>
+  <data name="WorktimeDel" xml:space="preserve">
+    <value>Delete work time:</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="SureDelete" xml:space="preserve">
+    <value>Are you sure you want to delete this work day?</value>
+  </data>
+  <data name="DayInsertSuccess" xml:space="preserve">
+    <value>Successfully inserted day</value>
+  </data>
+  <data name="DayInsertFail" xml:space="preserve">
+    <value>Failed to insert day</value>
+  </data>
+  <data name="AbortAction" xml:space="preserve">
+    <value>User aborted action</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="SelectRowFail" xml:space="preserve">
+    <value>No datarow selected</value>
+  </data>
+  <data name="DayDeleteFail" xml:space="preserve">
+    <value>Failed to delete day</value>
+  </data>
+  <data name="DayDeleteSuccess" xml:space="preserve">
+    <value>Successfully deleted day</value>
+  </data>
+  <data name="DayEditFail" xml:space="preserve">
+    <value>Failed to edit day</value>
+  </data>
+  <data name="DayEditSuccess" xml:space="preserve">
+    <value>Successfully edited day</value>
+  </data>
+  <data name="SettingsRead" xml:space="preserve">
+    <value>Loading settings</value>
+  </data>
+  <data name="SettingsReadFail" xml:space="preserve">
+    <value>Loading settings failed</value>
+  </data>
+  <data name="SettingsReadSuccess" xml:space="preserve">
+    <value>Loading settings success</value>
+  </data>
+  <data name="SettingsSave" xml:space="preserve">
+    <value>Saving settings</value>
+  </data>
+  <data name="SettingsSaveFail" xml:space="preserve">
+    <value>Saving settings failed</value>
+  </data>
+  <data name="SettingsSaveSuccess" xml:space="preserve">
+    <value>Saving settings success</value>
+  </data>
+  <data name="ToastTestCrit" xml:space="preserve">
+    <value>Testing critical toast</value>
+  </data>
+  <data name="ToastTestWarn" xml:space="preserve">
+    <value>Testing warning toast</value>
+  </data>
+  <data name="WindowHide" xml:space="preserve">
+    <value>Hide window</value>
+  </data>
+  <data name="WindowShow" xml:space="preserve">
+    <value>Show window</value>
+  </data>
+  <data name="CountryDetected" xml:space="preserve">
+    <value>Detected country</value>
+  </data>
+  <data name="CountryDetectFail" xml:space="preserve">
+    <value>Failed to detect country. Using fallback</value>
+  </data>
+  <data name="HolidayCalculating" xml:space="preserve">
+    <value>Calculating this years upcoming holidays.</value>
+  </data>
+  <data name="JobInitMinutes" xml:space="preserve">
+    <value>Initializing Chronos job scheduler and setting interval to minute(s)</value>
+  </data>
+  <data name="JobInitFailed" xml:space="preserve">
+    <value>Failed to initialize job scheduler. Limited funtionality.</value>
+  </data>
+  <data name="TotalHoursWorked" xml:space="preserve">
+    <value>Total hours worked</value>
+  </data>
+  <data name="ReadReadmeFail" xml:space="preserve">
+    <value>Could not open readme.xps</value>
+  </data>
+  <data name="Day" xml:space="preserve">
+    <value>Day</value>
+  </data>
+  <data name="Worktime" xml:space="preserve">
+    <value>Worktime</value>
+  </data>
+  <data name="MinToTray" xml:space="preserve">
+    <value>Window was minimized to tray icon.</value>
+  </data>
+  <data name="GoHomeNotifierCrit" xml:space="preserve">
+    <value>HEY! GO HOME</value>
+  </data>
+  <data name="GoHomeNotifierWarn" xml:space="preserve">
+    <value>It's time to go home</value>
+  </data>
+  <data name="WorktimeExport" xml:space="preserve">
+    <value>Worktime export</value>
+  </data>
+  <data name="ReminderThreshold" xml:space="preserve">
+    <value>Reminder threshold (hours)</value>
+  </data>
+  <data name="UpdateVisualsFailed" xml:space="preserve">
+    <value>"Could not update visuals in user interface</value>
+  </data>
+  <data name="TTSaveFailed" xml:space="preserve">
+    <value>Failed to save time to Chronos database</value>
+  </data>
+  <data name="Gross" xml:space="preserve">
+    <value>Gross</value>
+  </data>
+  <data name="SelectDate" xml:space="preserve">
+    <value>Select date</value>
+  </data>
+  <data name="ExportWeek" xml:space="preserve">
+    <value>Export week</value>
+  </data>
+  <data name="ExportMonth" xml:space="preserve">
+    <value>Export month</value>
+  </data>
+  <data name="ExportTenOff" xml:space="preserve">
+    <value>Only above 10 hours</value>
+  </data>
+  <data name="ExportTenOn" xml:space="preserve">
+    <value>All days</value>
+  </data>
+  <data name="ExportRelevance" xml:space="preserve">
+    <value>Employment law relevance</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>to</value>
+  </data>
+  <data name="ExportYear" xml:space="preserve">
+    <value>Export year</value>
+  </data>
+  <data name="ExportSetting" xml:space="preserve">
+    <value>Work time export</value>
+  </data>
+  <data name="ExportDefaultPathOn" xml:space="preserve">
+    <value>Export to the documents folder</value>
+  </data>
+  <data name="ExportDefaultPathOff" xml:space="preserve">
+    <value>Export to a custom folder</value>
+  </data>
+  <data name="ExportCustomFolder" xml:space="preserve">
+    <value>Select folder</value>
+  </data>
+  <data name="ExportFolderWatermark" xml:space="preserve">
+    <value>Default is the documents folder of the user</value>
+  </data>
+  <data name="Quit" xml:space="preserve">
+    <value>Quit application</value>
+  </data>
+  <data name="OpenExportFolder" xml:space="preserve">
+    <value>Open export folder</value>
+  </data>
+  <data name="TooltipTarget" xml:space="preserve">
+    <value>Target work time</value>
+  </data>
+  <data name="TooltipNet" xml:space="preserve">
+    <value>Net work time (without work breaks)</value>
+  </data>
+  <data name="TooltipGross" xml:space="preserve">
+    <value>Gross work time (incl. work breaks)</value>
+  </data>
+  <data name="Reload" xml:space="preserve">
+    <value>Reload</value>
+  </data>
+  <data name="WeekLast" xml:space="preserve">
+    <value>Last week</value>
+  </data>
+  <data name="WeekThis" xml:space="preserve">
+    <value>This week</value>
+  </data>
+  <data name="MonthThis" xml:space="preserve">
+    <value>This month</value>
+  </data>
+  <data name="MonthLast" xml:space="preserve">
+    <value>Last month</value>
+  </data>
+  <data name="ExportSuccess" xml:space="preserve">
+    <value>Export success</value>
+  </data>
+  <data name="ExportFail" xml:space="preserve">
+    <value>Export failed</value>
+  </data>
+  <data name="AddStatsDaysNotEmpty" xml:space="preserve">
+    <value>Days may not be empty !!!</value>
+  </data>
+  <data name="AddStatsStartEndMustMatch" xml:space="preserve">
+    <value>Start and End day must match !!!</value>
+  </data>
+  <data name="AddStatsAlreadyExist" xml:space="preserve">
+    <value>This day is already in the database. Please close this dialog and select EDIT!</value>
+  </data>
+  <data name="ChronosDesc" xml:space="preserve">
+    <value>Chronos worktime tracker</value>
+  </data>
+  <data name="RegisterInfo" xml:space="preserve">
+    <value>Adding application to autostart</value>
+  </data>
+  <data name="RegisterFail" xml:space="preserve">
+    <value>Failed to add application to autostart</value>
+  </data>
+  <data name="RegisterRemove" xml:space="preserve">
+    <value>Removing application from autostart</value>
+  </data>
+  <data name="RegisterRemoveFail" xml:space="preserve">
+    <value>Failed to remove application from autostart</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>Copy to clipboard</value>
+  </data>
+  <data name="ZoomIn" xml:space="preserve">
+    <value>Zoom in</value>
+  </data>
+  <data name="ZoomOut" xml:space="preserve">
+    <value>Zoom out</value>
+  </data>
+  <data name="ZoomDefault" xml:space="preserve">
+    <value>Reset zoom</value>
+  </data>
+  <data name="ZoomFitWith" xml:space="preserve">
+    <value>Stretch to page</value>
+  </data>
+  <data name="ZoomFitMaxPage" xml:space="preserve">
+    <value>Fit to one page</value>
+  </data>
+  <data name="ZoomFitTwoPages" xml:space="preserve">
+    <value>Fit to two pages</value>
+  </data>
+  <data name="ApplicationQuit" xml:space="preserve">
+    <value>Close application instead of minimizing</value>
+  </data>
+  <data name="ApplicationMinimize" xml:space="preserve">
+    <value>Minimize application instead of closing</value>
+  </data>
+  <data name="ChartDatapointsFail" xml:space="preserve">
+    <value>Could not fill datapoints to chart</value>
+  </data>
+  <data name="PortableMode" xml:space="preserve">
+    <value>Loading in portable mode</value>
+  </data>
+  <data name="PortableModeOff" xml:space="preserve">
+    <value>Loading in user profile mode</value>
+  </data>
+  <data name="Portable" xml:space="preserve">
+    <value>Portable</value>
+  </data>
+  <data name="PortableFail" xml:space="preserve">
+    <value>Failed to set to portable mode</value>
+  </data>
+  <data name="PortableSuccess" xml:space="preserve">
+    <value>Successfully set to portable mode</value>
+  </data>
+  <data name="PortableUndoFail" xml:space="preserve">
+    <value>Failed to set to profile mode</value>
+  </data>
+  <data name="PortableUndoSuccess" xml:space="preserve">
+    <value>Successfully set to profile mode</value>
+  </data>
+  <data name="RestartApplication" xml:space="preserve">
+    <value>Plase exit application and restart application!!!!</value>
+  </data>
+  <data name="StatsFilterButton" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="StatsWeek" xml:space="preserve">
+    <value>Week</value>
+  </data>
+  <data name="StatsMonth" xml:space="preserve">
+    <value>Month</value>
+  </data>
+  <data name="StatsYear" xml:space="preserve">
+    <value>Year</value>
+  </data>
+  <data name="StatsDatePick" xml:space="preserve">
+    <value>Pick date</value>
+  </data>
+</root>
