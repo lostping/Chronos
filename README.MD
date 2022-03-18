@@ -12,6 +12,7 @@
 <div align="center">
   <h1 align="center">Chronos</h3>
   <h2>Work time tracker</h4>
+  <h5>x64 Windows Application</h5>
 
   <a href="https://github.com/lostping/Chronos/issues">Report Bug</a>
     ·
@@ -77,11 +78,11 @@ Just use it! It's pretty self explanatory.
 
 ### Installation 🔌
 
- * Download and extract archive or
- * Download and start installer
+ * Download and extract archive
 
 ### Configuration ⚙
-start application, check settings, set to your liking, that's it!
+Made for Windows(!), might work with WINE on Linux...
+Start application, check settings, set to your liking, that's it!
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -167,6 +168,7 @@ Who made this project possible?
     * NLog
     * ToastNotifications
     * a lot more (check the repository to see all)
+* [Othneildrew's awesome README template](https://github.com/othneildrew/Best-README-Template)
 * [Img Shields](https://shields.io)
 * [GitHub](https://github.com)
 
