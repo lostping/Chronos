@@ -95,6 +95,8 @@ Start application, check settings, set to your liking, that's it!
 * Then start at the next day to log that day
 * You can also add/edit/delete dates manually if needed
 
+![Chronos Settings][product-settings-screenshot]
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
@@ -188,4 +190,5 @@ Who made this project possible?
 [issues-url]: https://github.com/lostping/Chronos/issues
 [license-shield]: https://img.shields.io/github/license/lostping/Chronos.svg?style=flat
 [license-url]: https://github.com/lostping/Chronos/blob/master/LICENSE
-[product-screenshot]: CHRONOS.png
+[product-screenshot]: CHRONOS.gif
+[product-settings-screenshot]: CHRONOS_settings.gif
