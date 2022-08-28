@@ -19,7 +19,7 @@ namespace Chronos.Properties {
     // -Klasse über ein Tool wie ResGen oder Visual Studio automatisch generiert.
     // Um einen Member hinzuzufügen oder zu entfernen, bearbeiten Sie die .ResX-Datei und führen dann ResGen
     // mit der /str-Option erneut aus, oder Sie erstellen Ihr VS-Projekt neu.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Resources {
@@ -174,6 +174,33 @@ namespace Chronos.Properties {
         public static string ChartDatapointsFail {
             get {
                 return ResourceManager.GetString("ChartDatapointsFail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Diagramm erstellen ähnelt.
+        /// </summary>
+        public static string ChartGen {
+            get {
+                return ResourceManager.GetString("ChartGen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Chronos ähnelt.
+        /// </summary>
+        public static string Chronos {
+            get {
+                return ResourceManager.GetString("Chronos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Chronos Arbeitszeiterfassung ähnelt.
+        /// </summary>
+        public static string ChronosDesc {
+            get {
+                return ResourceManager.GetString("ChronosDesc", resourceCulture);
             }
         }
         
@@ -1065,24 +1092,6 @@ namespace Chronos.Properties {
         public static string TestToast {
             get {
                 return ResourceManager.GetString("TestToast", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Chronos ähnelt.
-        /// </summary>
-        public static string Chronos {
-            get {
-                return ResourceManager.GetString("Chronos", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Chronos Arbeitszeiterfassung ähnelt.
-        /// </summary>
-        public static string ChronosDesc {
-            get {
-                return ResourceManager.GetString("ChronosDesc", resourceCulture);
             }
         }
         

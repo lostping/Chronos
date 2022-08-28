@@ -65,7 +65,8 @@ namespace Chronos
             #region Charting
             SeriesCollection = new SeriesCollection()
             {
-                new ColumnSeries
+                new ColumnSeries // alternative bar display
+                //new LineSeries // Line display
                 {
                     Title = Properties.Resources.Worktime,
                     Values = new ChartValues<double> { }

@@ -212,10 +212,19 @@
                     </TabItem>
                     <TabItem Header="{x:Static p:Resources.Chart}">
                         <Grid>
+                            <WrapPanel Height="30" VerticalAlignment="Top">
+                                <DatePicker x:Name="StatsDatePickG" mah:TextBoxHelper.AutoWatermark="True" mah:TextBoxHelper.Watermark="{x:Static p:Resources.StatsDatePick}" SelectedDate="{x:Static sys:DateTime.Now}" DisplayDateEnd="{x:Static sys:DateTime.Now}"/>
+                                <ComboBox x:Name="StatsTypeComboboxG" Width="120" SelectedIndex="0" Margin="10,0,0,0">
+                                    <ComboBoxItem Content="{x:Static p:Resources.StatsWeek}" Tag="week"/>
+                                    <ComboBoxItem Content="{x:Static p:Resources.StatsMonth}" Tag="month"/>
+                                    <ComboBoxItem Content="{x:Static p:Resources.StatsYear}" Tag="year"/>
+                                </ComboBox>
+                                <Button x:Name="StatsChartButton" Content="{x:Static p:Resources.ChartGen}" Height="30" Margin="10,0,10,0" Click="StatsChartButton_Click"/>
+                            </WrapPanel>
+
                             <lvc:CartesianChart x:Name="workchart"
                                     Series="{Binding SeriesCollection, IsAsync=True}"
-                                    LegendLocation="Top"
-                                    Grid.Column="5">
+                                    LegendLocation="Top" Margin="0,35,0,0">
                                 <lvc:CartesianChart.AxisY>
                                     <lvc:Axis MinValue="0" MaxValue="12">
                                         <lvc:Axis.Sections>
@@ -232,15 +241,6 @@
                                         </lvc:Axis.Sections>
                                     </lvc:Axis>
                                 </lvc:CartesianChart.AxisY>
-                                <lvc:CartesianChart.ContextMenu>
-                                    <ContextMenu>
-                                        <MenuItem x:Name="chart_this_week" Header="{x:Static p:Resources.WeekThis}" Click="ChartWeekClick" Tag="this" />
-                                        <MenuItem x:Name="chart_last_week" Header="{x:Static p:Resources.WeekLast}" Click="ChartWeekClick" Tag="last" />
-                                        <Separator/>
-                                        <MenuItem x:Name="chart_this_month" Header="{x:Static p:Resources.MonthThis}" Click="ChartMonthClick" Tag="this" />
-                                        <MenuItem x:Name="chart_last_month" Header="{x:Static p:Resources.MonthLast}" Click="ChartMonthClick" Tag="last" />
-                                    </ContextMenu>
-                                </lvc:CartesianChart.ContextMenu>
                                 <lvc:CartesianChart.AxisX>
                                     <lvc:Axis Title="{x:Static p:Resources.WorkDays}" Labels="{Binding LabelCollection}"/>
                                 </lvc:CartesianChart.AxisX>

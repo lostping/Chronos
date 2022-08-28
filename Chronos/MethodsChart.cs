@@ -1,6 +1,8 @@
 ﻿using MahApps.Metro.Controls;
 using System;
+using System.Linq;
 using System.Windows;
+using System.Windows.Media;
 using System.Windows.Controls;
 using System.Data;
 using System.Collections.Generic;
@@ -15,78 +17,60 @@ namespace Chronos
     /// </summary>
     public partial class MainWindow : MetroWindow
     {
-        private void ChartWeekClick(object sender, RoutedEventArgs e)
+        private void StatsChartButton_Click(object sender, RoutedEventArgs e)
         {
-            string whichWeek = ((MenuItem)sender).Tag.ToString();
-            switch (whichWeek)
+            string baseQuery = "SELECT * FROM CalculatedTimes WHERE today";
+
+            var selDate = StatsDatePickG.SelectedDate;
+            string type = ((ComboBoxItem)StatsTypeComboboxG.SelectedItem).Tag.ToString();
+            if (type.Length < 1 || type == string.Empty) { type = "week"; }
+            string finalQuery = "";
+            switch (type)
             {
-                case "this":
-                    ChartWeek(DateTime.Now.StartOfWeek(DayOfWeek.Monday));
+                case "week":
+                    var startWeek = selDate.Value.StartOfWeek(DayOfWeek.Monday);
+                    var endWeek = startWeek.AddDays(5).Subtract(new TimeSpan(0, 0, 1));
+                    string startWeekStr = startWeek.ToString("yyyy-MM-dd");
+                    string endWeekStr = endWeek.ToString("yyyy-MM-dd");
+                    finalQuery = string.Format("{0} BETWEEN '{1}' AND '{2}';", baseQuery, startWeekStr, endWeekStr);
                     break;
-                case "last":
-                    ChartWeek(DateTime.Now.StartOfLastWeek(DayOfWeek.Monday));
+                case "month":
+                    var startMonth = DateTimeExtensions.FirstDayOfMonth(selDate.Value);
+                    var startMonthStr = startMonth.ToString("yyyy-MM-dd");
+                    var endMonth = DateTimeExtensions.LastDayOfMonth(selDate.Value);
+                    var endMonthStr = endMonth.ToString("yyyy-MM-dd");
+                    finalQuery = string.Format("{0} BETWEEN '{1}' AND '{2}';", baseQuery, startMonthStr, endMonthStr);
+                    break;
+                case "year":
+                    var targetYear = selDate.Value.ToString("yyyy");
+                    finalQuery = string.Format("{0} LIKE '{1}-%';", baseQuery, targetYear);
                     break;
                 default:
+                    // this shouldn't be called as we force string type to week fallback
                     break;
             }
+            LoadDataToChart(finalQuery);
         }
 
-        private void ChartMonthClick(object sender, RoutedEventArgs e)
+        public void LoadDataToChart(string query = "none")
         {
-            string whichWeek = ((MenuItem)sender).Tag.ToString();
-            switch (whichWeek)
+            if (query.Length < 1 || query == "none")
             {
-                case "this":
-                    ChartMonth(DateTimeExtensions.GetDaysOfWeek(DateTime.Now, DayOfWeek.Monday));
-                    break;
-                case "last":
-                    ChartMonth(DateTimeExtensions.GetDaysOfWeek(DateTime.Now.AddMonths(-1), DayOfWeek.Monday));
-                    break;
-                default:
-                    break;
+                string baseQuery = "SELECT * FROM CalculatedTimes WHERE today";
+
+                var startWeek = DateTime.Now.StartOfWeek(DayOfWeek.Monday);
+                var endWeek = startWeek.AddDays(5).Subtract(new TimeSpan(0, 0, 1));
+                string startWeekStr = startWeek.ToString("yyyy-MM-dd");
+                string endWeekStr = endWeek.ToString("yyyy-MM-dd");
+                query = string.Format("{0} BETWEEN '{1}' AND '{2}';", baseQuery, startWeekStr, endWeekStr);
+
             }
-        }
-
-        private void ChartWeek(DateTime weekStart)
-        {
-            // get start of week, get end of week and substract one second to stay within work week
-            DateTime dt_week_start = weekStart;
-            DateTime dt_week_end = dt_week_start.AddDays(5).Subtract(new TimeSpan(0, 0, 1));
-
-            List<string> list = Helper.GetDateRange(dt_week_start, dt_week_end);
-            string queryRange = "SELECT * FROM CalculatedTimes WHERE today in ('" + String.Join("','", list) + "') ORDER BY today ASC;";
 
             string appPath = Helper.GetDbPath();
+            SQLite sql = new SQLite(appPath);
+            DataTable chartDatapoints = sql.GetDataTable(query);
 
-            SQLite sQLite = new SQLite(appPath);
-            DataTable datapoints = sQLite.GetDataTable(queryRange);
-
-            Dictionary<string, TimeSpan> dtdp = MakeDateTimes(datapoints);
-
-            FillChart(dtdp);
-        }
-
-        private void ChartMonth(IEnumerable<DateTime> targetDates)
-        {
-            List<string> workdaysList = new List<string>();
-            Dictionary<DateTime, DateTime> workWeeks = new Dictionary<DateTime, DateTime>();
-            foreach (var date in targetDates)
-            {
-                workWeeks.Add(date, date.AddDays(5).Subtract(new TimeSpan(0, 0, 1)));
-            }
-            foreach (var workweek in workWeeks)
-            {
-                workdaysList.AddRange(Helper.GetDateRange(workweek.Key, workweek.Value));
-            }
-
-            string queryRange = "SELECT * FROM CalculatedTimes WHERE today in ('" + String.Join("','", workdaysList) + "') ORDER BY today ASC;";
-
-            string appPath = Helper.GetDbPath();
-
-            SQLite sQLite = new SQLite(appPath);
-            DataTable datapoints = sQLite.GetDataTable(queryRange);
-
-            Dictionary<string, TimeSpan> dtdp = MakeDateTimes(datapoints);
+            Dictionary<string, TimeSpan> dtdp = MakeDateTimes(chartDatapoints);
 
             FillChart(dtdp);
         }
@@ -120,6 +104,38 @@ namespace Chronos
                         dynValues.Add(new LiveCharts.Defaults.ObservableValue(time.Value.TotalHours));
                     }
                 });
+
+                var maxval = (Int32)dynValues.Max(x => x.Value);
+                if (maxval > 12)
+                {
+                    workchart.AxisY.Clear();
+
+                    var sections = new LiveCharts.Wpf.SectionsCollection();
+                    sections.Add(new LiveCharts.Wpf.AxisSection
+                    {
+                        Value = 0,
+                        SectionWidth = tts.MaxDailyWork,
+                        Label = "Good",
+                        Fill = new SolidColorBrush() { Color = Color.FromRgb(51, 255, 218), Opacity = 0.4 }
+                    });
+                    sections.Add(new LiveCharts.Wpf.AxisSection()
+                    {
+                        Value = tts.MaxDailyWork,
+                        SectionWidth = maxval,
+                        Label = "Bad",
+                        Fill = new SolidColorBrush() { Color = Color.FromRgb(245, 114, 114), Opacity = 0.4 }
+                    }
+                    );
+
+                    workchart.AxisY.Add(
+                        new LiveCharts.Wpf.Axis
+                        {
+                            MinValue = 0,
+                            MaxValue = maxval,
+                            Sections = sections
+                        }
+                    );
+                }
             }
             catch (Exception ex)
             {

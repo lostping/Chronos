@@ -537,4 +537,7 @@
   <data name="StatsDatePick" xml:space="preserve">
     <value>Pick date</value>
   </data>
+  <data name="ChartGen" xml:space="preserve">
+    <value>Generate chart</value>
+  </data>
 </root>
